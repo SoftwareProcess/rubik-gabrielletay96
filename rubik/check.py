@@ -6,5 +6,5 @@ def _check(parms):
     if(encodedCube == None):
         result['status'] = 'error: xxx'
     else:
-        result['status'] = 'ok'
+        result['status'] = 'a ok'
     return result
