@@ -4,42 +4,48 @@ import rubik.cube as rubik
 def _check(parms):
     result={}
     encodedCube = parms.get('cube', None)
-           
-    if(encodedCube == None):
-        result['status'] = 'error: cube is missing'          
-    else:
+    
+    status = _isMissing(encodedCube)
+    
+    if status == 'ok':
         status = _isStr(encodedCube)
-        if status == True:
-            result['status'] = 'ok'
-        else:
-            result['status'] = status
+    if status == 'ok':
+        status = _size_check(encodedCube)     
+    if status == 'ok':
+        status = _colors_check(encodedCube)
         
+    result['status'] = status
+    
     return result
 
+def _isMissing(encodedCube):   
+    if(encodedCube == None):
+        return "error: cube is missing"
+    else:
+        return 'ok'
+        
 # checks if input is a string
 def _isStr(encodedCube):
     if type(encodedCube) == str:
-        status = _size_check(encodedCube)
-        return status
+        return 'ok'
     else:
-        return "'error: Invalid type"
+        return "error: Invalid type"
  
 # checks size of cube   
 def _size_check(encodedCube):
     if len(encodedCube) == 54:
-        status = _size_check(encodedCube)
-        return status
+        return 'ok'
     else:
-        return "'error: Invalid size"
+        return "error: Invalid size"
 
 # checks for unique colors
 def _colors_check(encodedCube):
-    unique_colors = len(list(set(encodedCube)))
-    if unique_colors == 6:
+    unique_colors = list(set(encodedCube))
+    if len(unique_colors) == 6:
         status = _color_count_check(encodedCube, unique_colors)
         return status
     else:
-        return "'error: Invalid number of unique colors"
+        return "error: Invalid number of unique colors"
 
 # checks for number of unique colors
 def _color_count_check(encodedCube, unique_colors):
@@ -47,8 +53,8 @@ def _color_count_check(encodedCube, unique_colors):
         count = encodedCube.count(color)
     
     if count == 9:
-        return True
+        return 'ok'
     else:
-        return "'error: Invalid number of colors"
+        return "error: Invalid number of colors"
     
     
