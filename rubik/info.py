@@ -1,3 +1,3 @@
 def _info(parms):
-    result = {'status': 'grt0007'}
+    result = {'status': 'grt'}
     return result
