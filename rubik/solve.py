@@ -4,7 +4,7 @@ import rubik.cube as rubik
 #    validate parms
 #    load parms['cube'] into cube model
 #    rotate cube in desired direction
-#    serialize vube model in string
+#    serialize cube model in string
 #    return string + status of 'ok'
 
 
@@ -20,7 +20,6 @@ def _solve(parms):
     
 
 def _validateParms(parms):
-    op = parms.get('op')
     rotate = parms.get('rotate')
     cube = parms.get('cube')
     

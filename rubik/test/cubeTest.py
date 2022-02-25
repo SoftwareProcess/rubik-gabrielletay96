@@ -1,6 +1,5 @@
 import unittest
 import rubik.cube as cube
-from _pyinstaller_hooks_contrib.tests.scripts.pyi_lib_boto import skip
 
 class CubeTest(unittest.TestCase):
 # Analysis: Cube    class
@@ -14,7 +13,7 @@ class CubeTest(unittest.TestCase):
 #        side effects: none
 #        nominal: empty instance of cube
 #        abnormal: NA
-    @unittest.skip
+
     def test_init_0101_ShouldCreateEmptyCube(self):
         myCube = cube.Cube()
         self.assertIsInstance(myCube, cube.Cube)
@@ -24,5 +23,15 @@ class CubeTest(unittest.TestCase):
                 'rotation': 'F',
                 'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
         
-        myCube = cube.Cube(parm)
-        self.assertEqual(myCube, 'ok')
+        myCube = cube.Cube()
+        status = myCube._load(parm)
+        self.assertEqual(status, 'ok')
+        
+    def test_init_0103_ShouldReturnInvalidSizeCube(self):
+        parm = {'op':'check',
+                'rotation': 'F',
+                'cube':'bbbgbbbbrrrrrrrrrgggggggoooooyooyyyyyyyyywwwwwwwww'}
+        
+        myCube = cube.Cube()
+        status = myCube._load(parm)
+        self.assertEqual(status, 'ok')
