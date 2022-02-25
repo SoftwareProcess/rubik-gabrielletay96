@@ -10,4 +10,4 @@ class RotateTest(unittest.TestCase):
                 'rotate': "",
                 'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
         status = rotate._check(parm)
-        self.assertEqual(status, "")
+        self.assertEqual(status, 'F')
