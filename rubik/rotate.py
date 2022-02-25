@@ -6,7 +6,7 @@ def _check(parms):
     
     status = _isEmpty(rotate)
     if status == 'ok':
-        _isString(rotate)
+        status = _isString(rotate)
     if status == 'ok':
         status = _isValidCharacters(rotate)
         
