@@ -1,5 +1,5 @@
 import rubik.cube as rubik
-from _pyinstaller_hooks_contrib.tests.scripts.pyi_lib_tensorflow_mnist import model
+
 # dev strategy
 #    valdiate parms
 #    load parms['cube'] into cube model
