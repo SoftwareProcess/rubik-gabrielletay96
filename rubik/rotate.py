@@ -8,6 +8,7 @@ def _check(parms):
     if status == 'ok':
         _isValidCharacters(rotate)
     
+    return status
     
 def _isEmpty(rotate):
     if rotate == "":
