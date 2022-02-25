@@ -7,7 +7,9 @@ def _check(parms):
     status = _isEmpty(rotate)
     if status == 'ok':
         status = _isValidCharacters(rotate)
-    
+    if status == 'ok':
+        _isString(rotate)
+        
     return status
     
 def _isEmpty(rotate):
@@ -31,3 +33,10 @@ def _isValidCharacters(rotate):
         return 'ok'
     else:
         return "error: invalid characters"
+    
+def _isString(rotate):
+    if isinstance(rotate, str):
+        return 'ok'
+    else:
+        return "error: invalid input type"
+     

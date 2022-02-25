@@ -15,7 +15,7 @@ class RotateTest(unittest.TestCase):
     #Fail
     def test_check_020_ShouldReturnEmptyInput(self):
         parm = {'op':'check',
-                'rotate': ,
+                'rotate': None,
                 'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
         status = rotate._check(parm)
         self.assertEqual(status, 'ok')
@@ -27,6 +27,13 @@ class RotateTest(unittest.TestCase):
                 'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
         status = rotate._check(parm)
         self.assertEqual(status, 'ok')
-        
+    
+    #Fail
+    def test_check_040_ShouldReturnInvalidInput(self):
+        parm = {'op':'check',
+                'rotate': 34,
+                'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
+        status = rotate._check(parm)
+        self.assertEqual(status, 'ok')
     
 
