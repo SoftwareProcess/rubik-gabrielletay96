@@ -44,12 +44,12 @@ class SolveTest(unittest.TestCase):
     @unittest.skip('skipping this test until cube model is complete')
     def test_solve_010_ShouldRotateValidNominalCubeF(self):
         inputDict = {}
-        inputDict['cube'] = 'bbrrggggyywwbbrrggooyywwbbrggooyywwbooyywwbbryooowrrrg'
+        inputDict['cube'] = 'bggwbybyrwogorrybwogrbgooggbwoworworwwybygyyoyrgbwyrrb'
         inputDict['rotate'] = 'F'
         inputDict['op'] = 'solve'
         
         expectedResult = {}
-        expectedResult['cube'] = 'bbrgrgggyywwbbrrggooyywwbbrggooyywwbooyywwbbryooowrrrg'
+        expectedResult['cube'] = 'bwbybgrygyogyrrobwogrbgooggbworwogwwybygrroyowbwyrrb'
         expectedResult['status'] = 'ok'
         
         actualResult = solve._solve(inputDict)
