@@ -13,6 +13,8 @@ def _check(parms):
 def _isEmpty(rotate):
     if rotate == "":
         return 'F'
+    elif rotate == "":
+        return 'error: empty rotation input'
     else:
         return 'ok'
 
