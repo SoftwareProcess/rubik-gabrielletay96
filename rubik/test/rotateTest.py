@@ -11,3 +11,11 @@ class RotateTest(unittest.TestCase):
                 'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
         status = rotate._check(parm)
         self.assertEqual(status, 'F')
+        
+    def test_check_020_ShouldReturnInvalidRotation(self):
+        parm = {'op':'check',
+                'rotate': "FbUuG",
+                'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
+        status = rotate._check(parm)
+        self.assertEqual(status, 'ok')
+
