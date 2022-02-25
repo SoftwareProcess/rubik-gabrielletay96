@@ -1,5 +1,6 @@
 import rubik.cube as rubik
 
+
 # checks important aspects of rubiks cube
 def _check(parms):
     result={}
