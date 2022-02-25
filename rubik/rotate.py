@@ -6,9 +6,9 @@ def _check(parms):
     
     status = _isEmpty(rotate)
     if status == 'ok':
-        status = _isValidCharacters(rotate)
-    if status == 'ok':
         _isString(rotate)
+    if status == 'ok':
+        status = _isValidCharacters(rotate)
         
     return status
     
@@ -19,7 +19,13 @@ def _isEmpty(rotate):
         return 'error: empty rotation input'
     else:
         return 'ok'
-
+    
+def _isString(rotate):
+    if isinstance(rotate, str):
+        return 'ok'
+    else:
+        return "error: invalid input type"
+    
 def _isValidCharacters(rotate):
     rotation_letters = ['f', 'b', 'r', 'l', 'u', 'd', 'F', 'B','R','L','U','D']
     cleaned_rotate = list(set(rotate))
@@ -33,10 +39,4 @@ def _isValidCharacters(rotate):
         return 'ok'
     else:
         return "error: invalid characters"
-    
-def _isString(rotate):
-    if isinstance(rotate, str):
-        return 'ok'
-    else:
-        return "error: invalid input type"
      
