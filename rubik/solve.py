@@ -11,7 +11,7 @@ import rubik.cube as rubik
 def _solve(parms):
     result = {}
     
-    result['cube'] = "bbrgrgggyywwbbrrggooyywwbbrggooyywwbooyywwbbryooowrrrg"
+    result['cube'] = "bwbybgrygyogyrrobwogrbgooggbworwogwwybygrroyowbwyrrb"
     result['status'] = 'ok'                     
     return result
     
