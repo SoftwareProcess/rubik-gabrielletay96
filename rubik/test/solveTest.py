@@ -4,15 +4,6 @@ import rubik.solve as solve
 
 class SolveTest(unittest.TestCase):
     
-    def setUp(self):
-        pass
-
-    def tearDown(self):
-        pass
-    
-    def testName(self):
-        pass
-    
     # Analysis: solve
 #    inputs:
 #        parms:    dictionary; mandatory; arrives validated
@@ -54,5 +45,52 @@ class SolveTest(unittest.TestCase):
         
         actualResult = solve._solve(inputDict)
         
-        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
         self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
+        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        
+    def test_solve_020_ShouldRotateValidNominalCubeWithEmptyStringRotation(self):
+        inputDict = {}
+        inputDict['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
+        inputDict['rotate'] = ''
+        inputDict['op'] = 'solve'
+        
+        expectedResult = {}
+        expectedResult['cube'] = None
+        expectedResult['status'] = 'error: empty string'
+        
+        actualResult = solve._solve(inputDict)
+        
+        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
+        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        
+    def test_solve_030_ShouldReturnInvalidRotationInputType(self):
+        inputDict = {}
+        inputDict['cube'] = 'bggwbybyrwogorrybwogrbgooggbwoworworwwybygyyoyrgbwyrrb'
+        inputDict['rotate'] = 780
+        inputDict['op'] = 'solve'
+        
+        expectedResult = {}
+        expectedResult['cube'] = None
+        expectedResult['status'] = "error: invalid input type"
+        
+        actualResult = solve._solve(inputDict)
+        
+        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
+        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        
+        
+    def test_solve_040_ShouldReturnInvalidRotationRotationCharacters(self):
+        inputDict = {}
+        inputDict['cube'] = 'bggwbybyrwogorrybwogrbgooggbwoworworwwybygyyoyrgbwyrrb'
+        inputDict['rotate'] = 'QvW'
+        inputDict['op'] = 'solve'
+        
+        expectedResult = {}
+        expectedResult['cube'] = None
+        expectedResult['status'] = "error: invalid characters"
+        
+        actualResult = solve._solve(inputDict)
+        
+        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
+        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        

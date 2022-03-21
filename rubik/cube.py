@@ -12,9 +12,18 @@ class Cube:
         self.cube = {1:[], 2: [], 3: [], 4: [], 5: [], 6: []}
     
     def _get(self, face):
-        return self.cube[face]
+        valid_faces = list(range(7))
+        if face in valid_faces:
+            status = 'valid'
+            cube = self.cube[face]
+            results = {'status': status, 'cube': cube}
+            return results
+        else:
+            status = 'error: invalid input'
+            results = {'status': status}
+            return results
     
-    def _load(self, parms):        
+    def _load(self, parms):
         result = check._check(parms)
         status = result['status']
         
@@ -27,8 +36,11 @@ class Cube:
             self.cube[4] = cube_parms[27:35]
             self.cube[5] = cube_parms[36:44]
             self.cube[6] = cube_parms[45:53]
-            return status
+            
+            results = {'status': status, 'cube': self.cube}
+            return results
         else:
-            return status
+            results = {'status': status}
+            return results
 
  

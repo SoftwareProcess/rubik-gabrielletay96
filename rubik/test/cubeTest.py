@@ -18,14 +18,14 @@ class CubeTest(unittest.TestCase):
         myCube = cube.Cube()
         self.assertIsInstance(myCube, cube.Cube)
         
-    def test_init_0102_ShouldReturnValidCube(self):
+    def test_init_0102_ShouldReturnInvalidInputCube(self):
         parm = {'op':'check',
                 'rotation': 'F',
                 'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
         
         myCube = cube.Cube()
         status = myCube._load(parm)
-        self.assertEqual(status, 'ok')
+        self.assertEqual(status, 'error: invalid input')
         
     def test_init_0103_ShouldReturnInvalidSizeCube(self):
         parm = {'op':'check',
@@ -35,3 +35,9 @@ class CubeTest(unittest.TestCase):
         myCube = cube.Cube()
         status = myCube._load(parm)
         self.assertEqual(status, 'ok')
+        
+    def test_init_0104_ShouldReturnInvalidInputCube(self):
+        myCube = cube.Cube()
+        results = myCube._get(7)
+        status = results['status']
+        self.assertEqual(status, 'error: invalid input')
