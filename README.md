@@ -1,2 +1,0 @@
-# SoftwareProcessRubik
-Rubik's cube
