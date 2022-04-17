@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_XsrKEKkyEeyB-7qAJI_qyw" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_XsrxIKkyEeyB-7qAJI_qyw" bindingContexts="_XsrxKakyEeyB-7qAJI_qyw">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.emf.common.ui.URIEditorInputFactory&quot; id=&quot;org.eclipse.oomph.setup.presentation.SetupEditorID&quot; name=&quot;workspace.setup&quot; tooltip=&quot;file:/Users/gabi/Documents/PhD/6700/Rubik/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup&quot;>&#xA;&lt;persistable bundle=&quot;org.eclipse.emf.common.ui&quot; class=&quot;org.eclipse.emf.common.ui.URIEditorInput&quot; name=&quot;workspace.setup&quot; uri=&quot;file:/Users/gabi/Documents/PhD/6700/Rubik/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;solveTest.py&quot; tooltip=&quot;Rubik/rubik/test/solveTest.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/test/solveTest.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;rotateTest.py&quot; tooltip=&quot;Rubik/rubik/test/rotateTest.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/test/rotateTest.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;solve.py&quot; tooltip=&quot;Rubik/rubik/solve.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/solve.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;rotate.py&quot; tooltip=&quot;Rubik/rubik/rotate.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/rotate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;rotate.py&quot; tooltip=&quot;/Users/gabi/Documents/PhD/6700/Rubik/rotate.py&quot;>&#xA;&lt;persistable uri=&quot;file:/Users/gabi/Documents/PhD/6700/Rubik/rotate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.emf.common.ui.URIEditorInputFactory&quot; id=&quot;org.eclipse.oomph.setup.presentation.SetupEditorID&quot; name=&quot;workspace.setup&quot; tooltip=&quot;file:/Users/gabi/Documents/PhD/6700/Rubik/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup&quot;>&#xA;&lt;persistable bundle=&quot;org.eclipse.emf.common.ui&quot; class=&quot;org.eclipse.emf.common.ui.URIEditorInput&quot; name=&quot;workspace.setup&quot; uri=&quot;file:/Users/gabi/Documents/PhD/6700/Rubik/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;solveTest.py&quot; tooltip=&quot;Rubik/rubik/test/solveTest.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/test/solveTest.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;rotateTest.py&quot; tooltip=&quot;Rubik/rubik/test/rotateTest.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/test/rotateTest.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;solve.py&quot; tooltip=&quot;Rubik/rubik/solve.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/solve.py&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;rotate.py&quot; tooltip=&quot;Rubik/rubik/rotate.py&quot;>&#xA;&lt;persistable path=&quot;/Rubik/rubik/rotate.py&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_XsrxIKkyEeyB-7qAJI_qyw" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_YEMSMakyEeyB-7qAJI_qyw" label="%trimmedwindow.label.eclipseSDK" x="69" y="52" width="2049" height="1097">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_XsrxIKkyEeyB-7qAJI_qyw" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_YEMSMakyEeyB-7qAJI_qyw" label="%trimmedwindow.label.eclipseSDK" x="58" y="63" width="2240" height="1166">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -10,6 +10,7 @@
     <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1647879438823"/>
     <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;show_in_time/>"/>
     <tags>topLevel</tags>
+    <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_YEMSMakyEeyB-7qAJI_qyw" selectedElement="_YEM5QKkyEeyB-7qAJI_qyw" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_YEM5QKkyEeyB-7qAJI_qyw" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_LGjFUKlZEeygp693IjfMbw">
         <children xsi:type="advanced:Perspective" xmi:id="_YNDTQKkyEeyB-7qAJI_qyw" elementId="org.eclipse.jdt.ui.JavaPerspective" selectedElement="_YNDTQakyEeyB-7qAJI_qyw" label="Java" iconURI="platform:/plugin/org.eclipse.jdt.ui/$nl$/icons/full/eview16/jperspective.png">
@@ -198,10 +199,9 @@
           <tags>persp.showIn:org.eclipse.ui.navigator.ProjectExplorer</tags>
           <tags>persp.showIn:org.eclipse.ui.views.ContentOutline</tags>
           <tags>persp.showIn:org.eclipse.tm.terminal.view.ui.TerminalsView</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_LGjsYKlZEeygp693IjfMbw" selectedElement="_LGk6gKlZEeygp693IjfMbw" horizontal="true">
-            <children xsi:type="basic:PartStack" xmi:id="_LGk6gKlZEeygp693IjfMbw" elementId="topLeft" containerData="2600" selectedElement="_LGk6galZEeygp693IjfMbw">
-              <tags>active</tags>
-              <children xsi:type="advanced:Placeholder" xmi:id="_LGk6galZEeygp693IjfMbw" elementId="org.python.pydev.navigator.view" ref="_LGASwKlZEeygp693IjfMbw" closeable="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_LGjsYKlZEeygp693IjfMbw" selectedElement="_LGk6gqlZEeygp693IjfMbw" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_LGk6gKlZEeygp693IjfMbw" elementId="topLeft" toBeRendered="false" containerData="2600">
+              <children xsi:type="advanced:Placeholder" xmi:id="_LGk6galZEeygp693IjfMbw" elementId="org.python.pydev.navigator.view" toBeRendered="false" ref="_LGASwKlZEeygp693IjfMbw" closeable="true">
                 <tags>View</tags>
                 <tags>categoryTag:PyDev</tags>
               </children>
@@ -287,9 +287,18 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_YMrf0KkyEeyB-7qAJI_qyw" elementId="org.eclipse.ui.editorss" selectedElement="_YMrf0akyEeyB-7qAJI_qyw">
-      <children xsi:type="basic:PartStack" xmi:id="_YMrf0akyEeyB-7qAJI_qyw" elementId="org.eclipse.e4.primaryDataStack">
+      <children xsi:type="basic:PartStack" xmi:id="_YMrf0akyEeyB-7qAJI_qyw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_hCi8YKl2Eey_go5mGyJNpw">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <tags>active</tags>
+        <children xsi:type="basic:Part" xmi:id="_hCi8YKl2Eey_go5mGyJNpw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="rotate" iconURI="platform:/plugin/org.python.pydev.shared_ui/icons/python_file.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;rotate.py&quot; partName=&quot;rotate&quot; title=&quot;rotate&quot; tooltip=&quot;/Users/gabi/Documents/PhD/6700/Rubik/rotate.py&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.ide.FileStoreEditorInputFactory&quot; uri=&quot;file:/Users/gabi/Documents/PhD/6700/Rubik/rotate.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>removeOnHide</tags>
+          <tags>org.python.pydev.editor.PythonEditor</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
+        </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_YM3tEKkyEeyB-7qAJI_qyw" elementId="org.eclipse.jdt.ui.PackageExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/package.png" tooltip="" closeable="true">
@@ -434,11 +443,9 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_LGASwKlZEeygp693IjfMbw" elementId="org.python.pydev.navigator.view" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="PyDev Package Explorer" iconURI="platform:/plugin/org.python.pydev.shared_ui/icons/pydev_package_explorer.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewBundle" value="org.python.pydev"/>
       <persistedState key="originalCompatibilityViewClass" value="org.python.pydev.navigator.ui.PydevPackageExplorer"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;expanded IMemento.internal.id=&quot;/Users/gabi/git/Rubik&quot;/>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1647879438823&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;lastRecentlyUsedFilters/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:PyDev</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_LHVIcKlZEeygp693IjfMbw" elementId="org.python.pydev.navigator.view">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -452,7 +459,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_YFmAYKkyEeyB-7qAJI_qyw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BHyWIKlZEeygp693IjfMbw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_XtqBuKkyEeyB-7qAJI_qyw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nCICoL6SEeyvrOGxbUosDQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_XtqBuKkyEeyB-7qAJI_qyw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_YFmncKkyEeyB-7qAJI_qyw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -483,7 +490,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_YFmnd6kyEeyB-7qAJI_qyw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BH5D0KlZEeygp693IjfMbw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_XtnlgKkyEeyB-7qAJI_qyw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nCLtAL6SEeyvrOGxbUosDQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_XtnlgKkyEeyB-7qAJI_qyw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_YFmneKkyEeyB-7qAJI_qyw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1115,7 +1122,7 @@
     <bindings xmi:id="_Xu4wk6kyEeyB-7qAJI_qyw" keySequence="ALT+CR" command="_XtV4dakyEeyB-7qAJI_qyw"/>
   </bindingTables>
   <bindingTables xmi:id="_XxVno6kyEeyB-7qAJI_qyw" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_XsrxLKkyEeyB-7qAJI_qyw">
-    <bindings xmi:id="_Avt0YKlZEeygp693IjfMbw" keySequence="M1+W" command="_XxVnoakyEeyB-7qAJI_qyw"/>
+    <bindings xmi:id="_mvhPsL6SEeyvrOGxbUosDQ" keySequence="M1+W" command="_XxVnoakyEeyB-7qAJI_qyw"/>
   </bindingTables>
   <bindingTables xmi:id="_YMvxQKkyEeyB-7qAJI_qyw" bindingContext="_YMvKMKkyEeyB-7qAJI_qyw"/>
   <bindingTables xmi:id="_YMwYUakyEeyB-7qAJI_qyw" bindingContext="_YMwYUKkyEeyB-7qAJI_qyw"/>
