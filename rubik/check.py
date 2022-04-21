@@ -1,5 +1,3 @@
-import rubik.cube as rubik
-
 
 # checks important aspects of rubiks cube
 def _check(parms):
@@ -20,7 +18,7 @@ def _check(parms):
     return result
 
 def _isMissing(encodedCube):   
-    if(encodedCube == None):
+    if(encodedCube == '' or encodedCube == None):
         return "error: Cube is missing"
     else:
         return 'ok'
