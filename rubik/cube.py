@@ -13,24 +13,9 @@ FACE = 'face'
 EDGE = 'edge'
 CORNER = 'corner'
 
-def get_rotation_from_face(face):
-    """
-    :param face: One of FRONT, BACK, LEFT, RIGHT, UP, DOWN
-    :return: A pair (CW, CC) given the clockwise and counterclockwise rotations for that face
-    """
-    if face == RIGHT:   return "R", "r"
-    elif face == LEFT:  return "L", "l"
-    elif face == UP:    return "U", "u"
-    elif face == DOWN:  return "D", "d"
-    elif face == FRONT: return "F", "f"
-    elif face == BACK:  return "B", "b"
-    return None
-
 class Square:
 
     def __init__(self, pos, colors):
-        assert all(type(x) == int and x in (-1, 0, 1) for x in pos)
-        assert len(colors) == 3
         self.pos = pos
         self.colors = list(colors)
         self._set_square_type()
@@ -43,8 +28,6 @@ class Square:
             self.type = EDGE
         elif self.colors.count(None) == 0:
             self.type = CORNER
-        else:
-            raise ValueError(f"Must have 1, 2, or 3 colors - given colors={self.colors}")
 
     def rotate(self, matrix):
         original_pos = self.pos
@@ -52,11 +35,9 @@ class Square:
 
         rotation = self.pos - original_pos
         if not any(rotation):
-            return  # no change occurred
+            return  # no change
         if rotation.count(0) == 2:
             rotation += matrix * rotation
-
-        assert rotation.count(0) == 1, ("error: Invalid rotation")
 
         i, j = (i for i, x in enumerate(rotation) if x != 0)
         self.colors[i], self.colors[j] = self.colors[j], self.colors[i]
@@ -90,6 +71,7 @@ class Cube:
         
         if status == 'ok':
             cube_parms = parms.get('cube')
+            cube_parms = list(cube_parms)
                         
             faces = (
                 Square(pos=RIGHT, colors=(cube_parms[13], None, None)),
@@ -135,36 +117,107 @@ class Cube:
             return results
       
     def _get_face(self, face):
-        """
-        :face: One of LEFT, RIGHT, UP, DOWN, FRONT, BACK
-        :return: A list of squares on the given face
-        """
-        
         valid_face = self._is_face_valid(face)
         if valid_face != 'error: Invalid input':
             status = 'valid'
             
-            cube = [s for s in self.squares if s.pos.dot(valid_face) > 0]
-            results = {'status': status, 'cube': cube}
+            face_list = [s for s in self.squares if s.pos.dot(valid_face) > 0]
+            results = {'status': status, 'face': face_list}
             return results
         else:
             status = 'error: Invalid input'
             results = {'status': status}
             return results
-        
-
-    def _slice(self, plane):
-        """
-        :param plane: A sum of any two of X_AXIS, Y_AXIS, Z_AXIS (e.g. X_AXIS + Y_AXIS)
-        :return: A list of squares in the given plane
-        """
-        assert plane.count(0) == 1
-        i = next((i for i, x in enumerate(plane) if x == 0))
-        return [s for s in self.squares if s.pos[i] == 0]
     
+    def _get_final_cube(self):
+        final_cube = [''] * 54
+
+        for square in self.squares:
+            if square.pos == RIGHT:
+                final_cube[13] = square.colors[0]
+            elif square.pos == LEFT:
+                final_cube[31] = square.colors[0]
+            elif square.pos == UP:
+                final_cube[40] = square.colors[1]   
+            elif square.pos == DOWN:
+                final_cube[49] = square.colors[1]
+            elif square.pos == FRONT:
+                final_cube[4] = square.colors[2]
+            elif square.pos == BACK:
+                final_cube[22] = square.colors[2]
+            elif square.pos == RIGHT + UP:
+                final_cube[10] = square.colors[0]
+                final_cube[41] = square.colors[1]
+            elif square.pos == RIGHT + DOWN:
+                final_cube[16] = square.colors[0]
+                final_cube[50] = square.colors[1]
+            elif square.pos == RIGHT + FRONT:
+                final_cube[12] = square.colors[0]
+                final_cube[5] = square.colors[2]
+            elif square.pos == RIGHT + BACK:
+                final_cube[14] = square.colors[0]
+                final_cube[21] = square.colors[2]
+            elif square.pos == LEFT + UP:
+                final_cube[28] = square.colors[0]
+                final_cube[39] = square.colors[1]
+            elif square.pos == LEFT + DOWN:
+                final_cube[34] = square.colors[0]
+                final_cube[48] = square.colors[1]
+            elif square.pos == LEFT + FRONT:
+                final_cube[32] = square.colors[0]
+                final_cube[3] = square.colors[2]
+            elif square.pos == LEFT + BACK:
+                final_cube[30] = square.colors[0]
+                final_cube[23] = square.colors[2]
+            elif square.pos == UP + FRONT:
+                final_cube[43] = square.colors[1]
+                final_cube[1] = square.colors[2]
+            elif square.pos == UP + BACK:
+                final_cube[37] = square.colors[1]
+                final_cube[19] = square.colors[2]
+            elif square.pos == DOWN + FRONT:
+                final_cube[46] = square.colors[1]
+                final_cube[7] = square.colors[2]
+            elif square.pos == DOWN + BACK:
+                final_cube[52] = square.colors[1]
+                final_cube[25] = square.colors[2]
+            elif square.pos == RIGHT + UP + FRONT:
+                final_cube[9] = square.colors[0]
+                final_cube[44] = square.colors[1]
+                final_cube[2] = square.colors[2]
+            elif square.pos == RIGHT + UP + BACK:
+                final_cube[11] = square.colors[0]
+                final_cube[38] = square.colors[1]
+                final_cube[18] = square.colors[2]
+            elif square.pos == RIGHT + DOWN + FRONT:
+                final_cube[15] = square.colors[0]
+                final_cube[47] = square.colors[1]
+                final_cube[8] = square.colors[2]
+            elif square.pos == RIGHT + DOWN + BACK:
+                final_cube[17] = square.colors[0]
+                final_cube[53] = square.colors[1]
+                final_cube[24] = square.colors[2]
+            elif square.pos == LEFT + UP + FRONT:
+                final_cube[29] = square.colors[0]
+                final_cube[42] = square.colors[1]
+                final_cube[0] = square.colors[2]
+            elif square.pos == LEFT + UP + BACK:
+                final_cube[27] = square.colors[0]
+                final_cube[36] = square.colors[1]
+                final_cube[20] = square.colors[2]
+            elif square.pos == LEFT + DOWN + FRONT:
+                final_cube[35] = square.colors[0]
+                final_cube[6] = square.colors[1]
+                final_cube[45] = square.colors[2]
+            elif square.pos == LEFT + DOWN + BACK:
+                final_cube[33] = square.colors[0]
+                final_cube[51] = square.colors[1]
+                final_cube[26] = square.colors[2]
+        
+        return ''.join(final_cube)
 
     def _is_face_valid(self, face):
-        valid_faces = ['RIGHT','LEFT', 'UP', 'DOWN', 'FRONT', 'BACK']
+        valid_faces = ['RIGHT', 'LEFT', 'UP', 'DOWN', 'FRONT', 'BACK']
         
         if type(face) == str:
             for valid_face in valid_faces:
@@ -188,23 +241,20 @@ class Cube:
             return BACK
     
     def _find_square(self, *colors):
+        
         for s in self.squares:
             if s.colors.count(None) == 3 - len(colors) and all(c in s.colors for c in colors):
                 return s
-            
     
     def colors(self):
-        """
-        :return: A set containing the colors of all stickers on the cube
-        """
         return set(c for square in self.squares for c in square.colors if c is not None)
 
-    def left_color(self): return self[LEFT].colors[0]
-    def right_color(self): return self[RIGHT].colors[0]
-    def up_color(self): return self[UP].colors[1]
-    def down_color(self): return self[DOWN].colors[1]
-    def front_color(self): return self[FRONT].colors[2]
-    def back_color(self): return self[BACK].colors[2]
+    def left_color(self): return self.cube['faces'][1].colors[0]
+    def right_color(self): return self.cube['faces'][0].colors[0]
+    def up_color(self): return self.cube['faces'][2].colors[1]
+    def down_color(self): return self.cube['faces'][3].colors[1]
+    def front_color(self): return self.cube['faces'][4].colors[2]
+    def back_color(self): return self.cube['faces'][5].colors[2]
 
     def _color_list(self):
         right = [p.colors[0] for p in sorted(self._get_face(RIGHT), key=lambda p: (-p.pos.y, -p.pos.z))]
@@ -214,8 +264,7 @@ class Cube:
         front = [p.colors[2] for p in sorted(self._get_face(FRONT), key=lambda p: (-p.pos.y, p.pos.x))]
         back  = [p.colors[2] for p in sorted(self._get_face(BACK),  key=lambda p: (-p.pos.y, -p.pos.x))]
 
-        return (up + left[0:3] + front[0:3] + right[0:3] + back[0:3]
-                   + left[3:6] + front[3:6] + right[3:6] + back[3:6]
+        return (up + left[0:3] + front[0:3] + right[0:3] + back[0:3] + left[3:6] + front[3:6] + right[3:6] + back[3:6]
                    + left[6:9] + front[6:9] + right[6:9] + back[6:9] + down)
         
         
