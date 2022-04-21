@@ -21,7 +21,7 @@ def _check(parms):
 
 def _isMissing(encodedCube):   
     if(encodedCube == None):
-        return "error: cube is missing"
+        return "error: Cube is missing"
     else:
         return 'ok'
         

@@ -18,14 +18,15 @@ class CubeTest(unittest.TestCase):
         myCube = cube.Cube()
         self.assertIsInstance(myCube, cube.Cube)
         
-    def test_init_0102_ShouldReturnInvalidInputCube(self):
+    def test_init_0102_ShouldReturnInvalidColorsCube(self):
         parm = {'op':'check',
                 'rotation': 'F',
-                'cube':'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'}
+                'cube':'bbbbssbbbbrrrrrrrrgggggfsgggoooooooooyyyyyyyywwwwwwwww'}
         
         myCube = cube.Cube()
-        status = myCube._load(parm)
-        self.assertEqual(status, 'error: invalid input')
+        results = myCube._load(parm)
+        status = results['status']
+        self.assertEqual(status, 'error: Invalid number of unique colors')
         
     def test_init_0103_ShouldReturnInvalidSizeCube(self):
         parm = {'op':'check',
@@ -33,11 +34,14 @@ class CubeTest(unittest.TestCase):
                 'cube':'bbbgbbbbrrrrrrrrrgggggggoooooyooyyyyyyyyywwwwwwwww'}
         
         myCube = cube.Cube()
-        status = myCube._load(parm)
-        self.assertEqual(status, 'ok')
+        results = myCube._load(parm)
+        status = results['status']
+        self.assertEqual(status, 'error: Invalid size')
         
     def test_init_0104_ShouldReturnInvalidInputCube(self):
         myCube = cube.Cube()
-        results = myCube._get(7)
+        
+        results = myCube._get_face(7)
         status = results['status']
-        self.assertEqual(status, 'error: invalid input')
+        
+        self.assertEqual(status, 'error: Invalid input')

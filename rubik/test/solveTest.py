@@ -43,10 +43,10 @@ class SolveTest(unittest.TestCase):
         expectedResult['cube'] = 'bwbybgrygyogyrrobwogrbgooggbworwogwwybygrroyowbwyrrb'
         expectedResult['status'] = 'ok'
         
-        actualResult = solve._solve(inputDict)
+        actualResult = solve.Solver(inputDict)
         
-        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
-        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        self.assertEqual(expectedResult['status'],actualResult['status'])
+        self.assertEqual(expectedResult['cube'], actualResult['cube'])
         
     def test_solve_020_ShouldRotateValidNominalCubeWithEmptyStringRotation(self):
         inputDict = {}
@@ -55,13 +55,13 @@ class SolveTest(unittest.TestCase):
         inputDict['op'] = 'solve'
         
         expectedResult = {}
-        expectedResult['cube'] = None
-        expectedResult['status'] = 'error: empty string'
+        expectedResult['cube'] = 'bbbbbbbbbrrrrrrrrrgggggggggoooooooooyyyyyyyyywwwwwwwww'
+        expectedResult['status'] = 'ok'
         
-        actualResult = solve._solve(inputDict)
+        actualResult = solve.Solver(inputDict)
         
-        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
-        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
+        self.assertEqual(expectedResult['cube'], actualResult['cube'])
         
     def test_solve_030_ShouldReturnInvalidRotationInputType(self):
         inputDict = {}
@@ -73,10 +73,10 @@ class SolveTest(unittest.TestCase):
         expectedResult['cube'] = None
         expectedResult['status'] = "error: invalid input type"
         
-        actualResult = solve._solve(inputDict)
+        actualResult = solve.Solver(inputDict)
         
-        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
-        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        self.assertEqual(expectedResult['status'],actualResult['status'])
+        self.assertEqual(expectedResult['cube'], actualResult['cube'])
         
         
     def test_solve_040_ShouldReturnInvalidRotationRotationCharacters(self):
@@ -89,8 +89,24 @@ class SolveTest(unittest.TestCase):
         expectedResult['cube'] = None
         expectedResult['status'] = "error: invalid characters"
         
-        actualResult = solve._solve(inputDict)
+        actualResult = solve.Solver(inputDict)
         
-        self.assertEqual(expectedResult.get('status'),actualResult.get('status'))
-        self.assertEqual(expectedResult.get('cube'), actualResult.get('cube'))
+        self.assertEqual(expectedResult['status'],actualResult['status'])
+        self.assertEqual(expectedResult['cube'], actualResult['cube'])
+        
+    def test_solve_050_ShouldRotateValidNominalCubeWithEmptyStringRotation(self):
+        inputDict = {}
+        inputDict['cube'] = 'bbbrrroooggggbbbwwwwggooorrrbbbrrryyygggyyywwooowwwyyy'
+        inputDict['rotate'] = ''
+        inputDict['op'] = 'solve'
+        
+        expectedResult = {}
+        expectedResult['cube'] = 'bbbrrroooggggbbbwwwoggooorrrbbbrrryyygggyyyywowowwwywy'
+        expectedResult['solution'] = 'FF'
+        expectedResult['status'] = 'ok'
+        
+        actualResult = solve.Solver(inputDict)
+        
+        self.assertEqual(expectedResult.get('status'), actualResult.get('status'))
+        self.assertEqual(expectedResult['cube'], actualResult['cube'])
         

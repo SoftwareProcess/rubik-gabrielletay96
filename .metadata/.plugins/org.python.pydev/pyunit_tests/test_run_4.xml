@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+    <summary errors="4" failures="0" finished="true" name="Test Run: 4" tests="4" total_time="Finished in: 0.00 secs."/>
+    <test location="/Users/gabi/git/Rubik/rubik/test/rotateTest.py" status="error" test="RotateTest.test_check_010_ShouldReturnFstringRotation" time="">
+        <stdout/>
+        <stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/gabi/git/Rubik/rubik/test/rotateTest.py", line 11, in test_check_010_ShouldReturnFstringRotation
+    status = rotate._check(parm)
+NameError: name 'rotate' is not defined
+]]></stderr>
+    </test>
+    <test location="/Users/gabi/git/Rubik/rubik/test/rotateTest.py" status="error" test="RotateTest.test_check_020_ShouldReturnEmptyInput" time="">
+        <stdout/>
+        <stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/gabi/git/Rubik/rubik/test/rotateTest.py", line 19, in test_check_020_ShouldReturnEmptyInput
+    status = rotate._check(parm)
+NameError: name 'rotate' is not defined
+]]></stderr>
+    </test>
+    <test location="/Users/gabi/git/Rubik/rubik/test/rotateTest.py" status="error" test="RotateTest.test_check_030_ShouldReturnInvalidRotation" time="">
+        <stdout/>
+        <stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/gabi/git/Rubik/rubik/test/rotateTest.py", line 27, in test_check_030_ShouldReturnInvalidRotation
+    status = rotate._check(parm)
+NameError: name 'rotate' is not defined
+]]></stderr>
+    </test>
+    <test location="/Users/gabi/git/Rubik/rubik/test/rotateTest.py" status="error" test="RotateTest.test_check_040_ShouldReturnInvalidInput" time="">
+        <stdout/>
+        <stderr><![CDATA[Traceback (most recent call last):
+  File "/Users/gabi/git/Rubik/rubik/test/rotateTest.py", line 35, in test_check_040_ShouldReturnInvalidInput
+    status = rotate._check(parm)
+NameError: name 'rotate' is not defined
+]]></stderr>
+    </test>
+    <launch mode="run">
+        <launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="Rubik rotateTest.py"/>
+]]></launch_memento>
+    </launch>
+</pydev-testsuite>

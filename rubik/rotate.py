@@ -2,14 +2,39 @@ import rubik.cube as rubik
 import rubik.cube as cube
 import operator
 
+from rubik.math import Matrix
+
+'''ROTATION CODES'''
+#90 degree rotations in the XY plane. CW is clockwise, CC is counter-clockwise.
+ROT_XY_CW = Matrix(0, 1, 0,
+                   -1, 0, 0,
+                   0, 0, 1)
+ROT_XY_CC = Matrix(0, -1, 0,
+                   1, 0, 0,
+                   0, 0, 1)
+
+# 90 degree rotations in the XZ plane (around the y-axis when viewed pointing toward you).
+ROT_XZ_CW = Matrix(0, 0, -1,
+                   0, 1, 0,
+                   1, 0, 0)
+ROT_XZ_CC = Matrix(0, 0, 1,
+                   0, 1, 0,
+                   -1, 0, 0)
+
+# 90 degree rotations in the YZ plane (around the x-axis when viewed pointing toward you).
+ROT_YZ_CW = Matrix(1, 0, 0,
+                   0, 0, 1,
+                   0, -1, 0)
+ROT_YZ_CC = Matrix(1, 0, 0,
+                   0, 0, -1,
+                   0, 1, 0)
+
+''' ROTATION VALIDATION '''
 def _check(parms):
     rotate = parms.get('rotate')
     
-    status = _isEmpty(rotate)
-    if status == 'ok':
-        status = _isString(rotate)
-    else:
-        return status
+    status =_isString(rotate)
+    return status
     
     if status == 'ok':
         status = _isValidCharacters(rotate)
@@ -18,7 +43,7 @@ def _check(parms):
     
 def _isEmpty(rotate):
     if rotate == '':
-        return 'error: empty string'
+        return 'empty'
     else:
         return 'ok'
     
@@ -84,3 +109,27 @@ class RotateCube():
         new_cube = ''.join(list(sorted_rotator_dict.values()))
 
         return new_cube
+    
+    def _rotate_face(self, face, matrix):
+        self._rotate_squares((cube.Cube._get_face(face)).cube, matrix)
+
+    def _rotate_slice(self, plane, matrix):
+        self._rotate_squares(self._slice(plane), matrix)
+
+    def _rotate_squares(self, squares, matrix):
+        for square in squares:
+            square.rotate(matrix)
+            
+    # Rotation commands
+    def L_cwise(self):  self._rotate_face('LEFT', ROT_YZ_CC)
+    def l_ccwise(self): self._rotate_face('LEFT', ROT_YZ_CW)
+    def R_cwise(self):  self._rotate_face('RIGHT', ROT_YZ_CW)
+    def r_ccwise(self): self._rotate_face('RIGHT', ROT_YZ_CC)
+    def U_cwise(self):  self._rotate_face('UP', ROT_XZ_CW)
+    def u_ccwise(self): self._rotate_face('UP', ROT_XZ_CC)
+    def D_cwise(self):  self._rotate_face('DOWN', ROT_XZ_CC)
+    def d_ccwise(self): self._rotate_face('DOWN', ROT_XZ_CW)
+    def F_cwise(self):  self._rotate_face('FRONT', ROT_XY_CW)
+    def f_ccwise(self): self._rotate_face('FRONT', ROT_XY_CC)
+    def B_cwise(self):  self._rotate_face('BACK', ROT_XY_CC)
+    def b_ccwise(self): self._rotate_face('BACK', ROT_XY_CW)
